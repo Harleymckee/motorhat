@@ -2,6 +2,7 @@
 
 from Adafruit_PWM_Servo_Driver import PWM
 import time
+import math
 
 class Adafruit_StepperMotor:
 	MICROSTEPS = 8
