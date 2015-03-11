@@ -1,3 +1,5 @@
+Harley's edits of: 
+
 Adafruit Python Library for DC + Stepper Motor HAT
 =======================
 

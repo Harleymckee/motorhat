@@ -6,7 +6,7 @@ import threading
 import random
 
 # create a default object, no changes to I2C address or frequency
-mh = Adafruit_MotorHAT()
+mh = Adafruit_MotorHAT(addr=0x60)
 
 # create empty threads (these will hold the stepper 1 and 2 threads)
 st1 = threading.Thread()
