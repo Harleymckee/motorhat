@@ -30,7 +30,7 @@ myMotor2.run(Adafruit_MotorHAT.FORWARD);
 myMotor.run(Adafruit_MotorHAT.RELEASE);
 
 rng = 16
-tm = 1
+tm = 0.80
 
 while (True):
 	print "Forward! "
