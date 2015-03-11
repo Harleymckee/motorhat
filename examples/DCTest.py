@@ -3,7 +3,7 @@ from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
 import time
 import atexit
-import math
+
 
 # create a default object, no changes to I2C address or frequency
 mh = Adafruit_MotorHAT(addr=0x60)
@@ -29,7 +29,7 @@ myMotor2.run(Adafruit_MotorHAT.FORWARD);
 # turn on motor
 myMotor.run(Adafruit_MotorHAT.RELEASE);
 
-rng = 160
+rng = 16
 
 while (True):
 	print "Forward! "
@@ -43,12 +43,12 @@ while (True):
 
 	print "\tSpeed up..."
 	for i in range(rng):
-		myMotor.setSpeed(i)
+		myMotor.setSpeed(i**2)
 		time.sleep(0.01)
 
 	print "\tSlow down..."
 	for i in reversed(range(rng)):
-		myMotor.setSpeed(i)
+		myMotor.setSpeed(i**2)
 		time.sleep(0.01)
 
 	print "Backward! "
@@ -56,12 +56,12 @@ while (True):
 
 	print "\tSpeed up..."
 	for i in range(rng):
-		myMotor.setSpeed(i)
+		myMotor.setSpeed(i**2)
 		time.sleep(0.01)
 
 	print "\tSlow down..."
 	for i in reversed(range(rng)):
-		myMotor.setSpeed(i)
+		myMotor.setSpeed(i**2)
 		time.sleep(0.01)
 
 	print "Release"
