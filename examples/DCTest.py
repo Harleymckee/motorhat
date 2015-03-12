@@ -51,14 +51,14 @@ while (True):
 	print "\tSpeed up..."
 	for i in range(rng):
 		myMotor.setSpeed(i**2)
-		myMotor2.setSpeed(i**2)
+		myMotor2.setSpeed(150)
 		myMotor3.setSpeed(i**2)
 		time.sleep(tm)
 
 	print "\tSlow down..."
 	for i in reversed(range(rng)):
 		myMotor.setSpeed(i**2)
-		myMotor2.setSpeed(i**2)
+		myMotor2.setSpeed(150)
 		myMotor3.setSpeed(i**2)
 		time.sleep(tm)
 
@@ -68,14 +68,14 @@ while (True):
 	print "\tSpeed up..."
 	for i in range(rng):
 		myMotor.setSpeed(i**2)
-		myMotor2.setSpeed(i**2)
+		myMotor2.setSpeed(150)
 		myMotor3.setSpeed(i**2)
 		time.sleep(tm)
 
 	print "\tSlow down..."
 	for i in reversed(range(rng)):
 		myMotor.setSpeed(i**2)
-		myMotor2.setSpeed(i**2)
+		myMotor2.setSpeed(150)
 		myMotor3.setSpeed(i**2)
 		time.sleep(tm)
 
