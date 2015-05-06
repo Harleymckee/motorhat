@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
+from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Adafruit_StepperMotor
 
 import time
 import atexit
@@ -17,50 +17,33 @@ def turnOffMotors():
 
 atexit.register(turnOffMotors)
 
-################################# DC motor test!
-myMotor = mh.getMotor(1)
-myMotor2 = mh.getMotor(2)
+################################# Motors
+myMotor = mh.getMotor(3)
+myMotor2 = mh.getMotor(4)
 
 
-# set the speed to start, from 0 (off) to 255 (max speed)
+myStepper = mh.getStepper(200, 2)  	# 200 steps/rev, motor port #1
+myStepper.setSpeed(30)  		# 30 RPM
+
 myMotor.setSpeed(150)
 myMotor2.setSpeed(150)
+
+
+# turn on motor
 
 myMotor.run(Adafruit_MotorHAT.FORWARD);
 myMotor2.run(Adafruit_MotorHAT.FORWARD);
 
-# turn on motor
+
 myMotor.run(Adafruit_MotorHAT.RELEASE);
 myMotor2.run(Adafruit_MotorHAT.RELEASE);
 
 
 while (True):
-	print "Forward! "
+	print "sup"
 	myMotor.run(Adafruit_MotorHAT.FORWARD)
-
-	print "\tSpeed up..."
-	for i in range(255):
-		myMotor.setSpeed(i)
-		time.sleep(0.01)
-
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		myMotor.setSpeed(i)
-		time.sleep(0.01)
-
-	print "Backward! "
-	myMotor.run(Adafruit_MotorHAT.BACKWARD)
-
-	print "\tSpeed up..."
-	for i in range(255):
-		myMotor.setSpeed(i)
-		time.sleep(0.01)
-
-	print "\tSlow down..."
-	for i in reversed(range(255)):
-		myMotor.setSpeed(i)
-		time.sleep(0.01)
-
-	print "Release"
+	myStepper.step(100, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
+	myStepper.step(100, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
+	print "guys"
 	myMotor.run(Adafruit_MotorHAT.RELEASE)
 	time.sleep(1.0)
