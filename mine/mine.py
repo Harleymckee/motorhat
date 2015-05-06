@@ -43,8 +43,8 @@ while (True):
 	print "sup"
 	myMotor.run(Adafruit_MotorHAT.FORWARD)
 	myMotor2.run(Adafruit_MotorHAT.FORWARD)
-	myStepper.step(100, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
-	myStepper.step(100, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
+	myStepper.step(1000, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
+	myStepper.step(1000, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
 	print "guys"
 	myMotor.run(Adafruit_MotorHAT.RELEASE)
 	myMotor2.run(Adafruit_MotorHAT.RELEASE)
