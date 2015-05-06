@@ -18,15 +18,15 @@ def turnOffMotors():
 atexit.register(turnOffMotors)
 
 ################################# Motors
-myMotor = mh.getMotor(3)
-myMotor2 = mh.getMotor(4)
+myMotor = mh.getMotor(1)
+myMotor2 = mh.getMotor(2)
 
 
-myStepper = mh.getStepper(200, 2)  	# 200 steps/rev, motor port #1
-myStepper.setSpeed(30)  		# 30 RPM
+myStepper = mh.getStepper(200, 2)  	
+myStepper.setSpeed(30)  		
 
-myMotor.setSpeed(150)
-myMotor2.setSpeed(150)
+myMotor.setSpeed(50)
+myMotor2.setSpeed(50)
 
 
 # turn on motor
@@ -42,8 +42,10 @@ myMotor2.run(Adafruit_MotorHAT.RELEASE);
 while (True):
 	print "sup"
 	myMotor.run(Adafruit_MotorHAT.FORWARD)
+	myMotor2.run(Adafruit_MotorHAT.FORWARD)
 	myStepper.step(100, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
 	myStepper.step(100, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
 	print "guys"
 	myMotor.run(Adafruit_MotorHAT.RELEASE)
+	myMotor2.run(Adafruit_MotorHAT.RELEASE)
 	time.sleep(1.0)
