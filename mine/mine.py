@@ -80,4 +80,5 @@ while (True):
 
 	print "Release"
 	myMotor.run(Adafruit_MotorHAT.RELEASE)
+	myMotor2.run(Adafruit_MotorHAT.RELEASE)
 	time.sleep(1.0)
