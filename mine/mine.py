@@ -25,8 +25,8 @@ myMotor2 = mh.getMotor(2)
 ##myStepper = mh.getStepper(200, 2)  	
 ##myStepper.setSpeed(40)  		
 
-myMotor.setSpeed(10)
-myMotor2.setSpeed(10)
+myMotor.setSpeed(150)
+myMotor2.setSpeed(150)
 
 
 # turn on motor
