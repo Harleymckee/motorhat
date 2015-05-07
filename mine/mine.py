@@ -41,7 +41,8 @@ myMotor2.run(Adafruit_MotorHAT.RELEASE);
 
 
 while (True):
-
+	#myStepper.step(200, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
+	#myStepper.step(200, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
 	print "Forward! "
 	myMotor.run(Adafruit_MotorHAT.FORWARD)
 	myMotor2.run(Adafruit_MotorHAT.FORWARD)
@@ -61,7 +62,21 @@ while (True):
 	#myStepper.step(200, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
 	#myStepper.step(200, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
 
+	print "Backward! "
+	myMotor.run(Adafruit_MotorHAT.BACKWARD)
+	myMotor2.run(Adafruit_MotorHAT.BACKWARD)
 
+	print "\tSpeed up..."
+	for i in range(200):
+		myMotor.setSpeed(i)
+		myMotor2.setSpeed(i)
+		time.sleep(0.01)
+
+	print "\tSlow down..."
+	for i in reversed(range(200)):
+		myMotor.setSpeed(i)
+		myMotor2.setSpeed(i)
+		time.sleep(0.01)
 
 	print "Release"
 	myMotor.run(Adafruit_MotorHAT.RELEASE)
