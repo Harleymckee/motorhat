@@ -22,8 +22,8 @@ myMotor = mh.getMotor(1)
 myMotor2 = mh.getMotor(2)
 
 
-myStepper = mh.getStepper(200, 2)  	
-myStepper.setSpeed(40)  		
+##myStepper = mh.getStepper(200, 2)  	
+##myStepper.setSpeed(40)  		
 
 myMotor.setSpeed(10)
 myMotor2.setSpeed(10)
@@ -43,8 +43,9 @@ while (True):
 	print "sup"
 	myMotor.run(Adafruit_MotorHAT.FORWARD)
 	myMotor2.run(Adafruit_MotorHAT.FORWARD)
-	myStepper.step(300, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
-	myStepper.step(300, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
+	time.sleep(5.0)
+##	myStepper.step(300, Adafruit_MotorHAT.FORWARD,  Adafruit_MotorHAT.SINGLE)
+##	myStepper.step(300, Adafruit_MotorHAT.BACKWARD, Adafruit_MotorHAT.SINGLE)
 	print "guys"
 	myMotor.run(Adafruit_MotorHAT.RELEASE)
 	myMotor2.run(Adafruit_MotorHAT.RELEASE)
